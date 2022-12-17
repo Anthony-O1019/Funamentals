@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+
+    <style>
+
+        .header{
+            background-color: black;
+            color: white;
+            padding: 10px;
+            margin: -10px;
+            margin-bottom: 15px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 5px;
+        }
+
+        .container{
+            width: 50%;
+            height: 600px;
+            display: flexbox;
+            justify-content: left;
+            background-color: lightgray;
+            margin-left: 425px;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1> DOJO SURVEY </h1>
+        </div> 
+        <div>
+            <form id="user" action="/process" method="post">
+                <label for="name">Name: </label>
+                <input type="text" name="name">
+            </div>
+                <p>Where are you taking your classes?</p>
+                <div>
+                    <select name="home" form="user">
+                        <option value="Seattle">Seattle</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Online">Online</option>
+                        <option value="Home">Home</option>
+                    </select>
+                </div>
+                <div>
+                    <p>What is your Stack?</p>
+                    <select name="list" form="user">
+                        <option value="Python">Python</option>
+                        <option value="CSS">CSS</option>
+                        <option value="HTML">HTML</option>
+                        <option value="C#">C#</option>
+                        <option value="JavaScript">JavaScript</option>
+                    </select>
+                    <p>Tell us your thoughts!</p>
+                    <textarea form="user" name="comment">Here you can tell us!...</textarea>
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

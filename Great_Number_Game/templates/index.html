@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game</title>
+
+    <style>
+
+        h1{
+            height: 40px;
+            width: 530px;
+            background-color: grey;
+            color: yellow;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-image: linear-gradient(red,black);
+        }
+
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+
+        .banner{
+            display: flex;
+            justify-content: center;
+            width: 400px;
+            height: 25px;
+            background-color: green;
+            font-size: larger;
+            color: white;
+        }
+
+        .reset{
+            display: flex;
+            justify-content: center;
+            width: 200px;
+            height: 25px;
+            background-color: blue;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Welcome to the Great Guessing Game!</h1>
+            <p>I am thinking of a number between 1 and 100</p>
+            <form name="guess" action="/guess" method="post">
+            <label for="guess"></label>
+            <input type="text" name="guess">
+            <a href="/guess" name="guess"><input type="submit" value="guess"></a>
+            </form>
+            {% if 'guess' in session: %}
+                {% if session['guess'] == session['random'] %}
+                <div>
+                <p class="banner">You are Correct! The Number was {{session['random']}}</p>
+                <a href="/reset" class="reset">Click Here to Play Again!</a>
+                </div>
+                {% endif %}
+            {% endif %}    
+        </div>
+    </div>
+</body>
+</html>
